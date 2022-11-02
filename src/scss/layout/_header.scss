@@ -1,0 +1,173 @@
+/*Estilos para el menú de navegación*/
+
+.nav-header{
+    height: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 74, 74);
+
+    /*
+    Estilos para el encabezado menú de navegación
+    @Francisco Enríquez*/
+
+
+    h1{
+        font-size: 5rem;
+    }
+    
+    /*
+    Estilos para los elementos del menú de navegación
+    @Francisco Enríquez*/
+
+    .nav-item{
+        a{
+            font-size: 5rem;
+            color: white;
+        }
+    }
+
+    /*
+    Estilos para la flexibilidad del menú de navegación
+    @Francisco Enríquez*/
+
+    .dflex{
+        a{
+            font-size: 3.5rem;
+            text-decoration: none;
+            color: white;
+        }
+    }
+}
+/*
+Estilos opcionales para el menu de navegación
+@Francisco Enríquez*/
+
+.nav-header2{
+    height: 4rem;
+    display: flex!important;
+    justify-content: center;
+    
+    /*
+    Estilos opcional para el encabezado del menu de navegación
+    @Francisco Enríquez*/
+
+    h1{
+        font-size: 5rem;
+    }
+}
+
+.venta{
+    margin-left: 12rem;
+}
+
+/*
+Estilos de los apartados del header
+@Francisco Enríquez*/
+
+.apartados-header{
+    //background-color: white;
+    width: 100%;
+    z-index: 3;
+}
+
+
+/*
+Estilos para el botón de login del menú de navegación
+@Francisco Enríquez*/
+
+.enlace-login{
+    font-family: $fuente1;
+    font-weight: 600;
+    margin: auto;
+    color: white;
+}
+
+/*
+Estilos para el ícono de ponshisushi
+@Francisco Enríquez*/
+
+.enlace-icono{
+    margin: auto auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    top: 15%;
+    margin: 0 40%;
+    font-family: $fuente2;
+    color: white;
+    font-size: 8rem;
+
+    @include media(t1){
+        top: 23%;
+        margin: 0 32%;
+    }
+    @include media(t2){
+        top: 25%;
+        margin: 0 30%;
+    }
+    @include media(tab){
+        top: 20%;
+        margin: 0 33%;
+    }
+
+    img{
+        height: 25rem;
+        width: 25rem;
+
+        @include media(t1){
+            height: 23vh;
+            width: 35vw;
+        }
+        @include media(t2){
+            height: 35vh;
+            width: 38vw;
+        }
+        @include media(tab){
+            height: 37vh;
+            width: 38vw;
+        }
+    }
+}
+
+/*
+Estilos para las referencias y párrafos del header
+@Francisco Enríquez*/
+
+a, p{
+    color: white; 
+    font-weight: 600;
+    font-family: $fuente1;
+    padding: 0;
+
+    /*
+    Estilo para cuando el usuario coloque el mouse sobre las referencias del header
+    @Francisco Enríquez*/
+
+    @include media(pc){
+        color: rgb(0, 140, 255);
+    }
+
+    &:hover{
+        color: rgb(0, 140, 255);
+    }
+}
+/*
+Estilos los botones del menú de navegación
+@Francisco Enríquez*/
+
+.div-enlaces{
+    display: flex;
+    align-self: center;
+    align-items: flex-start;
+
+    /*
+    Estilo para las referencias del menú de navegación
+    @Francisco Enríquez*/
+
+    a{
+        margin-left: 3rem;
+    }
+}
+
+

@@ -1,0 +1,36 @@
+/*
+Estilos para el diseño responsive
+@Francisco Enríquez*/
+
+
+@mixin grid($columnas, $espaciado ) {
+    display: grid;
+    gap: $espaciado;
+    grid-template-columns: repeat($columnas, 1fr);
+    justify-items: center;
+}
+
+// Responsive
+
+/*
+Estilos para definir medidas de dispositivos y reacomodar las páginas web
+@Francisco Enríquez*/
+
+@mixin media($media) {
+    // Resolución para dispositivos moviles muy pequeños
+    @if $media == t1 {
+        @media (max-width: 575px) { @content; }
+    }
+    // Resolucion para dispositivos moviles pequeños
+    @else if $media == t2 {
+        @media (min-width: 576px) and (max-width: 767px) { @content; }
+    }
+    // Resolucion para tablets
+    @else if $media == tab {
+        @media (min-width: 768px) and (max-width: 991px) { @content; }
+    }
+    // Resolucion para pc
+    @else if $media == pc {
+        @media (min-width: 992px) { @content; }
+    }
+}

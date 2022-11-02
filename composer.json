@@ -1,0 +1,20 @@
+{
+    "name": "marco/bienesraices_inicio",
+    "description": "Creando un proyecto con POO",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Marco Betance",
+            "email": "marco_a_bp@outlook.com"
+        }
+    ],
+    "require": {
+        "intervention/image": "^2.6",
+        "phpmailer/phpmailer": "^6.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "./classes"
+        }
+    }
+}

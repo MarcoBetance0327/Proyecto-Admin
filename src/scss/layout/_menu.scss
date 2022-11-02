@@ -1,0 +1,135 @@
+.nav-producto{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+}
+
+/*
+Estilos de la sección de comidas
+@Francisco Enríquez*/
+
+.contenido-comida{
+    margin: 2rem 0 2rem auto;
+    display: flex;
+    flex-direction: row;
+    
+    /*
+    Estilos para las imágenes de la sección de comidas
+    @Francisco Enríquez*/
+
+    img{
+        height: 35rem;
+        width: 45rem;
+        object-fit: cover;
+    }
+
+    /*
+    Estilos para el resumen de la sección de comidas
+    @Francisco Enríquez*/
+
+    .resumen-comida{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 5rem;
+
+        /*
+        Estilos para el resumen de la sección de comidas
+        @Francisco Enríquez*/
+
+        h1, p{
+            color: black;
+
+            font-family: $fuente2;
+        }
+    }
+}
+
+/*
+Estilos de los botones de la sección de comidas
+@Francisco Enríquez*/
+
+.boton{
+    width: 15rem;
+}
+
+/*
+Estilos de los botones de la sección de comidas
+@Francisco Enríquez*/
+
+.parte-blanca{
+    margin-bottom: -8rem;
+}
+
+.navegacion{
+    @include media(t1){
+        @include grid(3, 0.5vw);
+    }
+    
+    button{
+        @include media(t1){
+            width: 25vw;
+            height: 10vh;
+
+            h3{
+                font-size: 3vw;
+            }
+        }
+    }
+}
+
+/*
+Estilos del enlace para actualizar las comidas
+@Francisco Enríquez*/
+
+.enlace-actualizar{
+    position: relative;
+
+    img{
+        width: 2.5rem;
+        height: 2.5rem;
+        object-fit: cover;
+    }
+}
+
+/*
+Estilos del enlace para eliminar las comidas
+@Francisco Enríquez*/
+
+.enlace-eliminar{
+    position: relative;
+
+    /*
+    Estilos del enlace para eliminar las comidas
+    @Francisco Enríquez*/
+
+    input[type="image"]{
+        width: 2.5rem;
+        height: 2.5rem;
+        object-fit: cover;
+    }
+}
+
+/*
+Estilos de la sección para editar la comidas
+@Francisco Enríquez*/
+
+.edicion{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+/*
+Estilos del contenedor de la sección para editar la comidas
+@Francisco Enríquez*/
+
+.div_edicion{
+    .enlace-crear{
+        font-size: 1vw;
+        @include media(t1){
+            font-size: 3.5vw;
+        }
+    }
+}

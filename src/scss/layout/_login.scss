@@ -1,0 +1,185 @@
+/*
+Estilos del formulario del login
+@Francisco Enríquez*/
+
+.formulario{
+    fieldset{
+        display: flex;
+        flex-direction: column;
+        border-radius: 1rem;
+        margin: 0 0 1.5rem 0;
+
+        legend, label{
+            font-size: 4rem;
+            font-family: $fuente2;
+
+            @include media(t1){
+                font-size: 3vw;
+            }
+            @include media(t2){
+                font-size: 2.8rem;
+            }
+        }
+
+        label{
+            font-size: 2.5rem;
+
+            @include media(t1){
+                font-size: 5vw;
+            }
+        }
+
+        input{
+            border: 1px solid black;
+            border-radius: 1rem;
+            width: 80vw;
+            height: 4rem;
+
+            @include media(t1){
+                font-size: 2vw;
+                width: 80vw;
+            }
+
+            @include media(t2){
+                font-size: 4vw;
+                width: 80vw;
+            }
+
+            @include media(tab){
+                font-size: 4vw;
+                width: 80vw;
+            }
+        }
+
+        textarea{
+            border: 1px solid black;
+            border-radius: 1rem;
+            width: 80vw;
+            height: 20vh;
+
+            @include media(t1){
+                font-size: 2vw;
+                width: 80vw;
+                height: 15vh;
+            }
+            @include media(t2){
+                font-size: 2vw;
+                width: 80vw;
+                height: 15vh;
+            }
+            @include media(tab){
+                font-size: 2vw;
+                width: 80vw;
+                height: 15vh;
+            }
+        }
+    }
+}
+
+.enlace-regresar{
+    width: 5vw;
+    height: 10vh;
+    display: flex;
+    margin-left: -30vw;
+
+    @include media(t1){
+        width: 11vw;
+        margin-left: -35vw;
+        filter: invert(1);
+    }
+}
+
+/*
+Estilos del contenedor del formulario del login
+@Francisco Enríquez*/
+
+.contenedor-login{
+    h1{
+        font-size: 4rem;
+        font-family: $fuente1;
+        font-weight: 600;
+    }
+}
+
+/*
+Estilos del último contenedor del formulario del login
+@Francisco Enríquez*/
+
+.div-login{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    /*
+    Estilos del encabezado del último contenedor del formulario del login
+    @Francisco Enríquez*/
+
+    h2{
+        color: white;
+    }
+}
+
+/*
+Estilos del background del formulario de registro
+@Francisco Enríquez*/
+
+
+.bg-registro{
+    background-image: url(/build/img/fondo-registro.jpg);
+    background-size: contain;
+
+    @include media(t1){
+        background-image: url(/build/img/fondo-registro2.jpg);
+    }
+    @include media(t2){
+        background-image: url(/build/img/fondo-registro2.jpg);
+    }
+}
+
+/*
+Estilos del background del formulario de inicio de sesión
+@Francisco Enríquez*/
+
+.bg-login{
+    display: flex;
+    flex-direction: column;
+    background-image: url(/build/img/fondo-login.png);
+    background-size: contain;
+
+    @include media(t1){
+        background-image: url(/build/img/fondo-login2.jpg);
+    }
+    @include media(t2){
+        background-image: url(/build/img/fondo-login2.jpg);
+    }
+}
+/*
+Estilos del texto del formulario de inicio de sesión
+@Francisco Enríquez*/
+
+.text-login{
+    @include media(t1){
+        color: white;
+    }
+}
+
+/*
+Estilos del texto del formulario de registro
+@Francisco Enríquez*/
+
+.text-register{
+    color: rgb(57, 130, 190);
+}
+
+/*
+Estilos del texto del formulario de inicio de sesión de facebook
+@Francisco Enríquez*/
+
+.fb{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+

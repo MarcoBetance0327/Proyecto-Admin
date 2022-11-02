@@ -1,0 +1,22 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    background-color: honeydew;
+}
+.login{
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 400px;
+    align-items: center;
+
+    
+}
+
+.login, .h2{
+    color: gray;
+    padding-bottom: 40px;
+    margin-top: 20px;
+    
+}

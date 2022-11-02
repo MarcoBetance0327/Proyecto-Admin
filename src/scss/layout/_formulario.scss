@@ -1,0 +1,98 @@
+/*
+Estilos para el encabezado del formulario de crear del CRUD
+@Francisco Enríquez*/
+
+.encabezado-crud{
+    font-family: $fuente3;
+    font-size: 4rem;
+    font-weight: 600;
+    margin-top: 5rem;
+}
+
+/*
+Estilos para el encabezado del formulario de crear del CRUD
+@Francisco Enríquez*/
+
+.input-info{
+    height: 6rem;
+    border: 1px solid rgb(172, 172, 172);
+    border-radius: 1rem;
+}
+
+/*
+Estilos para los textos del formulario de crear del CRUD
+@Francisco Enríquez*/
+
+.txt_desc{
+    height: 16rem;
+    white-space: pre-line;
+}
+
+/*
+Estilos para el conjunto de etiquetas e input del formulario de crear del CRUD
+@Francisco Enríquez*/
+
+fieldset{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 1rem;
+
+    /*
+    Estilos para las leyendas del formulario de crear del CRUD
+    @Francisco Enríquez*/
+
+    legend{
+        margin: auto;
+        font-family: $fuente3;
+        font-size: 6rem;
+    }
+
+    /*
+    Estilos para las etiquetas del formulario de crear del CRUD
+    @Francisco Enríquez*/
+
+    label{
+        font-family: $fuente1;
+        font-weight: 600;
+        font-size: 4rem;
+    }
+}
+
+/*
+Estilos para el contenedor del formulario de crear del CRUD
+@Francisco Enríquez*/
+
+.div-form{
+    select{
+        font-family: $fuente3;
+        font-weight: 600;
+        padding-right: 2rem;
+        margin-right: 4rem;
+    }
+}
+
+/*
+Estilos para la imagen del formulario de crear del CRUD
+@Francisco Enríquez*/
+
+.imagen-small{
+    width: 40rem;
+}
+
+/*
+Estilos para el formulario de crear del CRUD
+@Francisco Enríquez*/
+
+.form-crear{
+    select{
+        height: 5rem;
+        -webkit-appearance: button;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+
+        font-family: $fuente1;
+    }
+}
+

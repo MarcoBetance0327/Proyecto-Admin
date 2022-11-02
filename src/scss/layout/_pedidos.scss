@@ -1,0 +1,96 @@
+/*
+Estilos del apartado ordenar pedido
+@Francisco Enríquez*/
+
+.apartado2{
+    position: relative;
+
+    /*
+    Estilos del fondo del apartado de ordenar pedido
+    @Francisco Enríquez*/
+    img{
+        position: relative;
+        display: inline-block;
+        height: 100vh;
+        object-fit: cover;
+    }
+
+    /*
+    Estilos del párrafo de ordenar pedido
+    @Francisco Enríquez*/
+    .texto-encima{
+        position: absolute;
+        color: white;
+    }
+
+    /*
+    Estilos del fondo del título del encabezado de ordenar pedido
+    @Francisco Enríquez*/
+
+    h2{
+        font-family: $fuente1;
+    }
+
+    /*
+    Estilos de párrafo del apartado ordenar pedido
+    @Francisco Enríquez*/
+
+    p{
+        top: 25%;
+        font-family: $fuente2;
+        margin: 0 20rem;
+    }
+
+    /*
+    Estilos del botón del apartado solicitar pedido
+    @Francisco Enríquez*/
+    .boton-a2{
+        top: 80%;
+    }
+
+    @include media(t1){
+        img{
+            height: 40vh;
+        }
+
+        p{
+            margin: 0 2vw;
+            font-size: 2vw;
+        }
+    }
+    @include media(t2){
+        img{
+            height: 60vh;
+        }
+
+        p{
+            margin: 0 2vw;
+            font-size: 2.2vw;
+        }
+    }
+    @include media(tab){
+        img{
+            height: 80vh;
+        }
+
+        p{
+            margin: 0 2vw;
+            font-size: 2.5vw;
+        }
+    }
+    
+}
+
+.boton{
+    @include media(t1){
+        font-size: 2vw;
+        margin-top: -2vh;
+    }
+    @include media(t2){
+        font-size: 2.5vw;
+    }
+    @include media(tab){
+        font-size: 3vw;
+    }
+}
+

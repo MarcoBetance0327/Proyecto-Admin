@@ -1,0 +1,192 @@
+/*
+Estilos generales de todo el sitio web
+@Francisco Enríquez*/
+
+/*
+Estilos generales del html
+@Francisco Enríquez*/
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/*
+Estilos generales del body
+@Francisco Enríquez*/
+
+body {
+    // font-family: $fuente_principal;
+    font-size: 1.6rem;
+    line-height: 1.8;
+}
+
+/*
+Estilo de párrafos
+@Francisco Enríquez*/
+
+p {
+    // color: $negro;
+    font-size: 2rem;
+}
+
+/*
+Estilos para contenedores de secciones del sitio web
+@Francisco Enríquez*/
+
+.contenedor {
+    width: 95%;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+/*
+Estilos para referencias
+@Francisco Enríquez*/
+
+a {
+    text-decoration: none;
+
+    &:hover{
+        color: rgb(0, 140, 255);
+    }
+}
+
+/*
+Estilos para imágenes
+@Francisco Enríquez*/
+
+
+img,
+picture {
+    width: 100%;
+    display: block;
+}
+
+h1, h2, h3 {
+    // font-family: $fuente_principal;
+    // margin: $separacion / 2 0;
+    font-weight: 300;
+    text-align: center;
+    
+}
+
+/*
+Estilos para encabezados*/
+
+h1, h2, h3, h4{
+    font-family:  'Roboto', sans-serif;
+}
+
+h1 {
+    font-size: 3.8rem;
+}
+h2 {
+    font-size: 3.4rem;
+}
+h3 {
+    font-size: 3rem;
+}
+h4 {
+    font-size: 2.6rem;
+}
+
+/*
+Estilos para botones
+@Francisco Enríquez*/
+
+.boton{
+    display: flex;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-family: $fuente1;
+    font-weight: 600;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: rgb(182, 180, 180);
+    border: none;
+    margin-bottom: 2rem;
+
+    &:hover{
+        background-color: darken(rgb(182, 180, 180), 5);
+        color: white;
+        cursor: pointer;
+    }
+}
+
+/*
+Estilos para el menú de navegación
+@Francisco Enríquez*/
+
+.div_edicion{
+    display: flex;
+    flex-direction: row;
+    margin: 1rem 3rem 0;
+    border-bottom: 2px solid rgb(141, 141, 141);
+    line-height: 0;
+
+    h2{
+        font-family: $fuente1;
+        font-weight: 600;
+    }
+
+    .enlace-crear{
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        font-size: 2rem;
+        color: black;
+        background-color: rgb(182, 180, 180);
+        padding: 2rem;
+        border-radius: 1rem;
+        font-family: $fuente3;
+        font-weight: 600;
+        margin: 0 0 1rem auto;
+
+        &:hover{
+            background-color: darken(rgb(182, 180, 180), 5);
+            cursor: pointer;
+        }
+    }
+}
+
+/*
+Estilos para el menú de navegación
+@Francisco Enríquez*/
+
+.navegacion{
+    margin: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0;
+
+    button{
+        width: 18rem;
+        height: 7rem;
+        background-color: gray;
+        border: none;
+        opacity: .65;
+
+        &.actual{
+            background-color: black;
+        }
+
+        &:hover{
+            cursor: pointer;
+        }
+
+        h3{
+            color: white;
+            margin: 0;
+            font-family: $fuente2;
+        }
+    }
+}
+
+
+
