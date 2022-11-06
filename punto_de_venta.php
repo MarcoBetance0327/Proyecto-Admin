@@ -1,4 +1,5 @@
 <?php 
+    
     require 'includes/app.php';
 
     use App\Producto;
@@ -9,13 +10,14 @@
 
     $auth = $_SESSION['login'] ?? null;
 
-    
-
     if(!isset($inicio)){
         $inicio = false;
     }
 
+    
+
     incluirTemplate('header');
+   
 ?>
 
 
@@ -46,9 +48,9 @@
                             $query = "SELECT * FROM producto WHERE codigo LIKE '%$busqueda%' ";
                             $result = mysqli_query($conn, $query);
 
-
                             if($result):
                                 if(mysqli_num_rows ($result) > 0):
+                
                                     while ($producto = $result->fetch_array()):
                     ?>
 
@@ -61,6 +63,13 @@
                                     <h3 class="secondary"><?php echo $producto['inventario'];?></h3>
                                     <h3 class="secondary"><?php echo $producto['codigo'];?></h3>
                                     <h3 class="secondary">$ <?php echo $producto['precio'];?></h3>
+
+                                    <input type="number" class="form-control mb-3" name="quantity" value="1">
+                                    <input type="hidden" name="id" value="<?php echo $producto['id'];?>">
+                                    <input type="hidden" name="nombre" value="<?php echo $producto['nombre'];?>">
+                                    <input type="hidden" name="codigo" value="<?php echo $producto['codigo'];?>">
+                                    <input type="hidden" name="precio" value="<?php echo $producto['precio'];?>">
+                                    <button type="submit" name="add_to_cart" class="btn btn-warning"><i class="fa fa-shopping-cart"></i>Agregar</button>
                                 </div>
                             </div>
                         </form>
@@ -71,7 +80,7 @@
                         -->
 
                     </div>
-                    <?php     
+                    <?php    
                                     endwhile;
                                 endif;
                             endif;
