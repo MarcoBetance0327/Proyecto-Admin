@@ -36,6 +36,11 @@
     }
 }
 
+.contenedor-ticket{
+    display: flex;
+    flex-direction: row;
+}
+
 .puntoVenta{
     margin: 2rem 4rem 0;
 

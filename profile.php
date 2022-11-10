@@ -20,7 +20,7 @@ require "includes/auth.php";
                                 'product_name' => filter_input(INPUT_POST, 'product_name'),
                                 'description' => filter_input(INPUT_POST, 'description'),
                                 'new_price' => filter_input(INPUT_POST, 'new_price'),
-                                'quantity' => filter_input(INPUT_POST, 'quantity'),
+                                'cantidad' => filter_input(INPUT_POST, 'cantidad'),
                                 'old_price' => filter_input(INPUT_POST, 'old_price'),
                                 'product_img' => filter_input(INPUT_POST, 'product_img')
 
@@ -28,7 +28,7 @@ require "includes/auth.php";
                     }else {
                             for ($i = 0 ; $i < count ($product_ids); $i++){
                                     if ($product_ids[$i]  == filter_input(INPUT_GET, 'id')) {
-                                            $_SESSION['shopping_cart'][$i]['quantity'] += filter_input(INPUT_POST, 'quantity');
+                                            $_SESSION['shopping_cart'][$i]['cantidad'] += filter_input(INPUT_POST, 'cantidad');
                                     }
                             }
                     }
@@ -39,7 +39,7 @@ require "includes/auth.php";
                     'product_name' => filter_input(INPUT_POST, 'product_name'),
                     'description' => filter_input(INPUT_POST, 'description'),
                     'new_price' => filter_input(INPUT_POST, 'new_price'),
-                    'quantity' => filter_input(INPUT_POST, 'quantity'),
+                    'cantidad' => filter_input(INPUT_POST, 'cantidad'),
                     'old_price' => filter_input(INPUT_POST, 'old_price'),
                     'product_img' => filter_input(INPUT_POST, 'product_img')
 
@@ -149,7 +149,7 @@ if (filter_input(INPUT_GET, 'action')  == 'checkout') {
                 if (!empty ($_SESSION['shopping_cart'])):
                     $total = 0 ;
                     foreach ($_SESSION['shopping_cart'] as $key => $product):
-                        $total = $total + ($product['quantity'] * $product['new_price']);
+                        $total = $total + ($product['cantidad'] * $product['new_price']);
             ?>
                                    <tbody>
 										<td><?php echo $product ['product_name'];?> </td>

@@ -2,18 +2,18 @@
     use App\Comidas;
 
     if($_SERVER['SCRIPT_NAME'] === 'index.php'){
-        $comidas = Comidas::all();
+        $productos = Comidas::all();
     }else{
-        $comidas = Comidas::get(3);
+        $productos = Comidas::get(3);
     }
 ?>
 
 <div class="">
     <div class="contenedor-menu index">
-        <?php foreach($comidas as $comida) { ?>
+        <?php foreach($productos as $producto) { ?>
             <div class="menu">
-                <img loading="lazy" src="/img/<?php echo $comida->imagen; ?>"> 
-                <p class="titulo-menu"><?php echo $comida->nombre; ?> $<?php echo $comida->precio; ?></p>
+                <img loading="lazy" src="/img/<?php echo $producto->imagen; ?>"> 
+                <p class="titulo-menu"><?php echo $producto->nombre; ?> $<?php echo $producto->precio; ?></p>
             </div>
         <?php } ?>
     </div>
