@@ -115,10 +115,15 @@ if (filter_input(INPUT_GET, 'action')  == 'checkout') {
                 foreach ($_SESSION['shopping_cart'] as $key => $producto):
                     $query_detalles = "INSERT INTO detalles(id_venta, id_producto, cantidad, precio) Values(". $idVenta . " , " . $producto['id'] . " , " . $producto['cantidad'] . " , " . $producto['precio'] .")";
                     $result = mysqli_query($conn, $query_detalles);
+                    
                 endforeach;
             endif;  
-
-            
+            #Limpiar el carrito 
+            foreach ($_SESSION['shopping_cart'] as $key => $producto) {
+                # remove the iitem
+                unset($_SESSION['shopping_cart'] [$key]);
+                
+            }
         }
  
     }
