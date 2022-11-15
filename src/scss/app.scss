@@ -1,20 +1,8 @@
-/*
-Exportar todos los estilos de tipo base para combinarlos en un solo archivo css
-@Francisco Enríquez*/
-
-/* BASE */
-
 @import 'base/variables';
 @import 'base/utilidades';
 @import 'base/globales';
 @import 'base/normalize';
 @import 'base/mixins';
-
-/*
-Exportar todos los estilos de tipo base para combinarlos en un solo archivo css
-@Francisco Enríquez*/
-
-/* LAYOUT */
 
 @import 'layout/header';
 @import 'layout/footer';

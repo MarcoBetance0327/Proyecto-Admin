@@ -1,45 +1,23 @@
 <?php 
-    
-    require 'includes/app.php';
-
-    use App\Producto;
-
-    if(!isset($_SESSION)){
-        session_start();
-    }
-
-    $auth = $_SESSION['login'] ?? null;
-
-    if(!isset($inicio)){
-        $inicio = false;
-    }
-
-    
-
-    incluirTemplate('header');
-   
-?>
-
-<?php 
             session_start();
             $productos_ids = array();
             //session_destroy();
-
             // check if add to cart button has been clicked
             if (isset($_POST['add_to_cart'])) {
+                
                if (isset($_SESSION['shopping_cart'])) {
                    # keep track of shopping cart product
+                   
                    $count = count ($_SESSION['shopping_cart']);
                    $productos_ids = array_column($_SESSION['shopping_cart'], 'id');
                     if (!in_array(filter_input(INPUT_GET, 'id'), $productos_ids)) {
+                        
                             $_SESSION['shopping_cart'][$count] = array(
-
                                 'id' => filter_input(INPUT_GET, 'id'),
                                 'nombre' => filter_input(INPUT_POST, 'nombre'),
                                 'codigo' => filter_input(INPUT_POST, 'codigo'),
                                 'precio' => filter_input(INPUT_POST, 'precio'),
                                 'cantidad' => filter_input(INPUT_POST, 'cantidad')
-
                             );
                     }else {
                             for ($i = 0 ; $i < count ($productos_ids); $i++){
@@ -57,11 +35,10 @@
                     'codigo' => filter_input(INPUT_POST, 'codigo'),
                     'precio' => filter_input(INPUT_POST, 'precio'),
                     'cantidad' => filter_input(INPUT_POST, 'cantidad')
-
-
                    );
                }
             }
+            
             # delete item from the cart
             if (filter_input(INPUT_GET, 'action') == 'delete') {
                 # go through the products to check a product that matches the Get Id
@@ -98,6 +75,60 @@ if (filter_input(INPUT_GET, 'action')  == 'checkout') {
 
 ?>
 
+<?php 
+    require 'includes/app.php';
+    use App\Producto;
+    use App\Ventas;
+    use App\Detalles;
+
+    if(!isset($_SESSION)){
+        session_start();
+    }
+
+    $auth = $_SESSION['login'] ?? null;
+
+    if(!isset($inicio)){
+        $inicio = false;
+    }
+
+    $venta = new Ventas;
+    $detalles = new Detalles;
+
+    $errores = Ventas::getErrores(); 
+    $errores = Detalles::getErrores(); 
+
+    $fecha = date("Y/m/d");
+
+    if($_SERVER['REQUEST_METHOD'] === 'POST'){
+        
+        if(isset($_POST['fecha'])){
+            $query = "INSERT INTO venta (fecha) VALUES ('" . $fecha . "')";
+            $result = mysqli_query($conn, $query);
+
+            $consultaMax = "SELECT MAX(id) FROM venta";
+            $result = mysqli_query($conn, $consultaMax);
+            $arr = mysqli_fetch_array($result);
+            $idVenta = $arr[0];
+            
+            if (!empty ($_SESSION['shopping_cart'])):
+                
+                foreach ($_SESSION['shopping_cart'] as $key => $producto):
+                    $query_detalles = "INSERT INTO detalles(id_venta, id_producto, cantidad, precio) Values(". $idVenta . " , " . $producto['id'] . " , " . $producto['cantidad'] . " , " . $producto['precio'] .")";
+                    $result = mysqli_query($conn, $query_detalles);
+                endforeach;
+            endif;  
+
+            
+        }
+ 
+    }
+
+    if(!isset($inicio)){
+        $inicio = false;
+    }
+
+    incluirTemplate('header');
+?>
 
 <body class="main-index">
     <div class="puntoVenta">
@@ -111,13 +142,13 @@ if (filter_input(INPUT_GET, 'action')  == 'checkout') {
 
             <div class="articulosVenta">
                 <div class="column-index row items">
+                    <div class="form-index3">
+                        <h1>CÓDIGO</h1>
+                        <h1>NOMBRE</h1>
+                        <h1>PRECIO</h1>
+                    </div>
+            
                     <?php 
-                        // Se hace la conexión a la base de datos y seleccionara la tabla de comidas
-                        // Luego, se evaluara con una condicional, si es de cierto tipo de sushi se mostrara, y los demás no se mostrarán 
-                        // Este mismo proceso se repite 3 veces, por ejemplo, esta sección es una sección que se muestra pero las otras dos no, si se selecciona otra sección,
-                        // esta se oculta y mostrará otra validación al tipo de sushi
-                    
-
                         require "includes/conn.php";
 
                         if(isset($_GET['enviar'])):
@@ -136,10 +167,9 @@ if (filter_input(INPUT_GET, 'action')  == 'checkout') {
                     <div class="col-lg-4">
                         <form action="punto_de_venta.php?action=add&id=<?php echo $producto['id'];?>" method="post">
                             <div class="card-shadow card shadow mb-4">
-                                <div class="form-index2 card-body">
-                                    <h3 class="secondary"><?php echo $producto['nombre'];?></h3>
-                                    <h3 class="secondary"><?php echo $producto['inventario'];?></h3>
+                                <div class="form-index3 card-body">
                                     <h3 class="secondary"><?php echo $producto['codigo'];?></h3>
+                                    <h3 class="secondary"><?php echo $producto['nombre'];?></h3>
                                     <h3 class="secondary">$ <?php echo $producto['precio'];?></h3>
 
                                     <input type="number" class="form-control mb-3" name="cantidad" value="1">
@@ -151,12 +181,6 @@ if (filter_input(INPUT_GET, 'action')  == 'checkout') {
                                 </div>
                             </div>
                         </form>
-                        <!-- 
-                            Se evaluara si la sesión del usuario es el admin, si es el admin, entonces se le otorgara el permiso de actualizar un producto o eliminarlo, 
-                            Si no es el admin, entonces no mostrara nada
-                            Actualizar nos redirigira al formulario, solamente que este ya se encontrarán llenos ciertos apartados para evitar que el admin tenga que llenarlos de nuevo
-                        -->
-
                     </div>
                     <?php    
                                     endwhile;
@@ -170,6 +194,14 @@ if (filter_input(INPUT_GET, 'action')  == 'checkout') {
         
         <div class="ticket">
             <h2>Ticket</h2>
+
+            <div class="encabezados-ticket">
+                <h1>CÓDIGO</h1>
+                <h1>NOMBRE</h1>
+                <h1>CANTIDAD</h1>
+                <h1>PRECIO</h1>
+                <h1>TOTAL</h1>
+            </div>
  
             <?php
                 if (!empty ($_SESSION['shopping_cart'])):
@@ -178,38 +210,29 @@ if (filter_input(INPUT_GET, 'action')  == 'checkout') {
                    
             ?>
 
-            <div class="card px-3 mb-5">
+            <?php
+                $totalProducto = ($producto['cantidad'] * $producto['precio']);
+            ?>
+
             
-                <div class="card-body">
-                    <div class="row contenedor-ticket">
-                    
-                        <?php
-                            $totalProducto = ($producto['cantidad'] * $producto['precio']);
-                        ?>
+            <div class="encabezados-ticket bg-white shadow mb-4">
+                <h4><?php echo $producto['codigo'];?></h4>
+                <h4><?php echo $producto['nombre'];?></h4>
+                <h4><?php echo $producto['cantidad'];?></h4>
+                <h4><?php echo $producto['precio'];?></h6> 
 
-                        
-                        <div class="col-md-4">
-                            <h4><?php echo $producto['codigo'];?></h4>
-                            <h4><?php echo $producto['nombre'];?></h4>
-                            <h4><?php echo $producto['cantidad'];?></h4>
-                            <h6><?php echo $producto['precio'];?></h6> 
+                <div class="col-md-5 py-4">
+                    <h5 class="float-right"><b>$ <?php echo $totalProducto;?></b></h5>
+                </div>
 
-                            <div class="col-md-5 py-4">
-                                <h5 class="float-right"><b><?php echo $totalProducto;?></b></h5>
-                            </div>
-
-                        </div>
-
-                        
-                    
-                        <div class="col-md-4 py-5 px-5">
-                            <a href="punto_de_venta.php?action=delete&id=<?php echo $producto ['id'];?>">
-                                    <div class="btn btn-danger">Remover</div>
-                            </a>
-                        </div>
-                    </div>
+                <div class="col-md-4 py-5 px-5">
+                    <a href="punto_de_venta.php?action=delete&id=<?php echo $producto ['id'];?>">
+                            <div class="btn btn-danger">Remover</div>
+                    </a>
                 </div>
             </div>
+
+            
            <?php 
                     $total = $total + ($producto['cantidad'] * $producto['precio']);
                     endforeach;
@@ -217,21 +240,40 @@ if (filter_input(INPUT_GET, 'action')  == 'checkout') {
            ?>
 
             <div class="card-body">
-                <b>Detalles de Precio</b>
                 <hr>  
                     <!--- Total price section --->
-                <div class="row">
-                    <div class="col-md-5 py-4">
-                        <h5><b>Monto a Pagar</b></h5>
+                <div class="montos">
+                    <div class="col-md-5 py-4 monto-total">
+                        <h5 class="total-productos"><b>Total</b></h5>
+
+                        <div class="col-md-5 py-4">
+                            <h5 class="float-right total-productos"><b>$</b><b class="total"><?php echo $total;?></b></h5>
+                        </div>
                     </div>
-                    <div class="col-md-5 py-4">
-                        <h5 class="float-right"><b><?php echo $total;?></b></h5>
+                    
+                    <div class="col-md-5 py-4 monto-total">
+                        <h5 class="float-right total-productos"><b>Pago</b></h5>
+
+                        <input id="pago" type="number" placeholder="Pago"  name="pago" class="label-b pago-input pago-valor">
+                        <input type="submit" onclick="calcularCambio()" class="boton2 b-buscador boton-input pago-input" value="Pagar">
+                    
                     </div>
-                </div>
+
+                    <div class="col-md-5 py-4 monto-total">
+                        <h5 class="total-productos"><b>Cambio</b></h5>
+
+                        
+                        <h5 class="float-right total-productos"><b class="cambio"></b></h5>
+                        
                     </div>
                 </div>
             
             </div>
+
+            <form method="post" action=""  class="btn-venta">
+                <input type="hidden" name="fecha" value="<?php echo $fecha?>">
+                <input type="submit" name="Venta" class="boton  btn-venta" value="Registra Venta">
+            </form>
             
         </div>   
         
@@ -239,9 +281,4 @@ if (filter_input(INPUT_GET, 'action')  == 'checkout') {
   
 </body>
 
-    <!--
-        /*
-            Llamamos al template footer para evitar duplicar codigo
-        */
-    -->
 <?php incluirTemplate('footer'); ?>

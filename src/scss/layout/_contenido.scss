@@ -1,6 +1,6 @@
 /*
 Estilos para el contenedor de la sección Acerca de
-@Francisco Enríquez*/
+*/
 
 .contenedor-tv{
     @include grid(2, 0);
@@ -8,7 +8,7 @@ Estilos para el contenedor de la sección Acerca de
 
     /*
     Estilos para la imagen de la sección Acerca de
-    @Francisco Enríquez*/
+    */
 
     img{
         height: 80rem;
@@ -18,7 +18,7 @@ Estilos para el contenedor de la sección Acerca de
 
     /*
     Estilo para el párrafo de la sección Acerca de
-    @Francisco Enríquez*/
+    */
 
     p{
         font-size: 2.3rem;
@@ -26,7 +26,7 @@ Estilos para el contenedor de la sección Acerca de
 
     /*
     Estilo para el subencabezado de la sección Acerca de
-    @Francisco Enríquez*/
+    */
 
     h3{
         margin: -3rem 0 -2rem 0;

@@ -25,7 +25,7 @@
         <meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″ />
         <meta charset="UTF-8">
 
-        <script src="/build/js/bundle.min.js"></script>
+        <script src="../../build/js/bundle.min.js"></script>
     </head>
 
     <!--- Navigation Start here ----> 

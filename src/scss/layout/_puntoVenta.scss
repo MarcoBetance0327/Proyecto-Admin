@@ -4,7 +4,7 @@
     column-gap: 2rem;
 
     .label-b{
-        width: 60rem;
+        width: 73rem;
         height: 7rem;
         border: 1px solid black;
         border-radius: 5px;
@@ -36,11 +36,6 @@
     }
 }
 
-.contenedor-ticket{
-    display: flex;
-    flex-direction: row;
-}
-
 .puntoVenta{
     margin: 2rem 4rem 0;
 
@@ -48,4 +43,62 @@
     grid-template-columns: repeat(2, 50% 50%);
     justify-items: center;
     gap: -20rem;
+}
+
+.encabezados-ticket{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+
+    justify-items: center;
+    align-items: center;
+}
+
+.contenedor-productos-flex{
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor-agregar{
+    display: flex;
+    flex-direction: row;
+}
+
+.total-productos{
+    font-size: 4rem;
+
+    padding-right: 15rem;
+
+    .boton{
+        padding: 0rem;
+    }
+}
+
+.pago-input{
+    height: 5rem;
+    width: 25rem;
+
+    border-radius: 6px;
+    border: none;
+}
+
+.boton-input{
+    width: 15rem;
+}
+
+.montos{
+    display: flex;
+    flex-direction: column;
+}
+
+.monto-total{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.btn-venta{
+    font-size: 2rem;
+    padding: 2rem 8rem;
+
+    display: flex;
+    justify-content: center;
 }

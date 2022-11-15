@@ -31,6 +31,13 @@
     justify-content: center;
 }
 
+.form-index3{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+    justify-content: center;
+}
+
 .main-index{
     background-color: rgb(235, 235, 235);
     

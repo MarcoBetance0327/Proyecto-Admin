@@ -65,7 +65,7 @@ error_reporting(-1);
 ?>
 
 <main class="contenedor">
-    <h1 class="encabezado-crud">Actualizar Proovedor</h1>
+    <h1 class="encabezado-crud">Actualizar Proveedor</h1>
 
     <!-- Se crea un formulario el cual dentro se asigna que se pueda subir cualquier tipo de archivo,
         y dentro de esta función se agrega un formulario que almacena los elementos para que el admin pueda evitar

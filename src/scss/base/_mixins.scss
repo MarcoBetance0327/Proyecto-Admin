@@ -1,6 +1,6 @@
 /*
 Estilos para el diseño responsive
-@Francisco Enríquez*/
+*/
 
 
 @mixin grid($columnas, $espaciado ) {
@@ -14,7 +14,7 @@ Estilos para el diseño responsive
 
 /*
 Estilos para definir medidas de dispositivos y reacomodar las páginas web
-@Francisco Enríquez*/
+*/
 
 @mixin media($media) {
     // Resolución para dispositivos moviles muy pequeños

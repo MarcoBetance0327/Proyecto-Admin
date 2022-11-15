@@ -1,13 +1,13 @@
 /*
 Estilos del contenido del div noticia
-@Francisco Enríquez*/
+*/
 
 .contenido-noticia{
     margin: 0 4rem;
 
     /*
     Estilos del encabezado contenido del div noticia
-    @Francisco Enríquez*/
+    */
 
     h1{
         font-family: $fuente-titulo-noticia;
@@ -16,7 +16,7 @@ Estilos del contenido del div noticia
 
     /*
     Estilos de la imagen 2 del contenido del div noticia
-    @Francisco Enríquez*/
+    */
 
     .imagen2{
         height: 55rem;
@@ -28,7 +28,7 @@ Estilos del contenido del div noticia
 
     /*
     Estilos del párrafo del contenido del div noticia
-    @Francisco Enríquez*/
+    */
 
     p{
         font-weight: 600;
@@ -40,7 +40,7 @@ Estilos del contenido del div noticia
 
 /*
 Estilos del div desplegable del div de noticias
-@Francisco Enríquez*/
+*/
 
 .div-desc2{
     max-width: 85rem;
@@ -50,7 +50,7 @@ Estilos del div desplegable del div de noticias
 
 /*
 Estilos de la clase edicion del div de noticias
-@Francisco Enríquez*/
+*/
 
 .edicion{
     display: flex;
@@ -61,7 +61,7 @@ Estilos de la clase edicion del div de noticias
 
     /*
     Estilos para las imágenes e input de la clase edicion del div de noticias
-    @Francisco Enríquez*/
+    */
 
     img, input[type=image]{
         max-width: 5rem;

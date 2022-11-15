@@ -1,10 +1,10 @@
 /*
 Estilos generales de todo el sitio web
-@Francisco Enríquez*/
+*/
 
 /*
 Estilos generales del html
-@Francisco Enríquez*/
+*/
 
 html {
     font-size: 62.5%;
@@ -16,7 +16,7 @@ html {
 
 /*
 Estilos generales del body
-@Francisco Enríquez*/
+*/
 
 body {
     // font-family: $fuente_principal;
@@ -26,7 +26,7 @@ body {
 
 /*
 Estilo de párrafos
-@Francisco Enríquez*/
+*/
 
 p {
     // color: $negro;
@@ -35,7 +35,7 @@ p {
 
 /*
 Estilos para contenedores de secciones del sitio web
-@Francisco Enríquez*/
+*/
 
 .contenedor {
     width: 95%;
@@ -45,7 +45,7 @@ Estilos para contenedores de secciones del sitio web
 
 /*
 Estilos para referencias
-@Francisco Enríquez*/
+*/
 
 a {
     text-decoration: none;
@@ -57,7 +57,7 @@ a {
 
 /*
 Estilos para imágenes
-@Francisco Enríquez*/
+*/
 
 
 img,
@@ -96,7 +96,7 @@ h4 {
 
 /*
 Estilos para botones
-@Francisco Enríquez*/
+*/
 
 .boton{
     display: flex;
@@ -117,9 +117,27 @@ Estilos para botones
     }
 }
 
+.boton2{
+    display: flex;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-family: $fuente1;
+    font-weight: 600;
+    border-radius: 1rem;
+    background-color: rgb(182, 180, 180);
+    border: none;
+    margin-bottom: 2rem;
+
+    &:hover{
+        background-color: darken(rgb(182, 180, 180), 5);
+        color: white;
+        cursor: pointer;
+    }
+}
+
 /*
 Estilos para el menú de navegación
-@Francisco Enríquez*/
+*/
 
 .div_edicion{
     display: flex;
@@ -155,7 +173,7 @@ Estilos para el menú de navegación
 
 /*
 Estilos para el menú de navegación
-@Francisco Enríquez*/
+*/
 
 .navegacion{
     margin: 1rem 2rem;

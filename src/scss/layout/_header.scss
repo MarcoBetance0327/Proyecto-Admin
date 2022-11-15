@@ -9,7 +9,7 @@
 
     /*
     Estilos para el encabezado menú de navegación
-    @Francisco Enríquez*/
+    */
 
 
     h1{
@@ -18,7 +18,7 @@
     
     /*
     Estilos para los elementos del menú de navegación
-    @Francisco Enríquez*/
+    */
 
     .nav-item{
         a{
@@ -29,7 +29,7 @@
 
     /*
     Estilos para la flexibilidad del menú de navegación
-    @Francisco Enríquez*/
+    */
 
     .dflex{
         a{
@@ -41,7 +41,7 @@
 }
 /*
 Estilos opcionales para el menu de navegación
-@Francisco Enríquez*/
+*/
 
 .nav-header2{
     height: 4rem;
@@ -50,7 +50,7 @@ Estilos opcionales para el menu de navegación
     
     /*
     Estilos opcional para el encabezado del menu de navegación
-    @Francisco Enríquez*/
+    */
 
     h1{
         font-size: 5rem;
@@ -63,7 +63,7 @@ Estilos opcionales para el menu de navegación
 
 /*
 Estilos de los apartados del header
-@Francisco Enríquez*/
+*/
 
 .apartados-header{
     //background-color: white;
@@ -74,7 +74,7 @@ Estilos de los apartados del header
 
 /*
 Estilos para el botón de login del menú de navegación
-@Francisco Enríquez*/
+*/
 
 .enlace-login{
     font-family: $fuente1;
@@ -85,7 +85,7 @@ Estilos para el botón de login del menú de navegación
 
 /*
 Estilos para el ícono de ponshisushi
-@Francisco Enríquez*/
+*/
 
 .enlace-icono{
     margin: auto auto;
@@ -132,7 +132,7 @@ Estilos para el ícono de ponshisushi
 
 /*
 Estilos para las referencias y párrafos del header
-@Francisco Enríquez*/
+*/
 
 a, p{
     color: white; 
@@ -142,7 +142,7 @@ a, p{
 
     /*
     Estilo para cuando el usuario coloque el mouse sobre las referencias del header
-    @Francisco Enríquez*/
+    */
 
     @include media(pc){
         color: rgb(0, 140, 255);
@@ -154,7 +154,7 @@ a, p{
 }
 /*
 Estilos los botones del menú de navegación
-@Francisco Enríquez*/
+*/
 
 .div-enlaces{
     display: flex;
@@ -163,7 +163,7 @@ Estilos los botones del menú de navegación
 
     /*
     Estilo para las referencias del menú de navegación
-    @Francisco Enríquez*/
+    */
 
     a{
         margin-left: 3rem;

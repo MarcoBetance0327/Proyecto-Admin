@@ -1,8 +1,3 @@
-<!--/*
-Declaramos las etiquetas meta para hacer uso de los atributos como la lectura del formato utf-8
-Tambien se redirecciona a los archivos css y bootstrap
-@Jose Rodriguez
--->
 <!doctype html>
 <html lang="en">
   <head>
@@ -14,10 +9,6 @@ Tambien se redirecciona a los archivos css y bootstrap
     <link rel="stylesheet" href="/build/css/app.css">
     <link rel="canonical" href="https://v5.getbootstrap.com/docs/5.0/examples/sign-in/">
 
-    
-
-    <!-- Redireccionamos al archivo core de bootstrap para indicar los estilos para el registro
-@Jose Rodriguez -->
 <link href="dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
