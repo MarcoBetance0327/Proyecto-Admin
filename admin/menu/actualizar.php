@@ -81,5 +81,3 @@ error_reporting(-1);
     </form>
     
 </main>
-
-<?php incluirTemplate('footer'); ?>

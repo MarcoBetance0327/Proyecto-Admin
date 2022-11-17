@@ -53,5 +53,3 @@
         <input type="submit" value="Agregar Proveedor" class="boton">
     </form>
 </main>
-
-<?php incluirTemplate('footer');

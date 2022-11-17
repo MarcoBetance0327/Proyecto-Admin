@@ -6,7 +6,6 @@ session_start();
 require "includes/auth.php";
             $product_ids = array();
             //session_destroy();
-           
             // check if add to cart button has been clicked
             if (isset($_POST['add_to_cart'])) {
                if (isset($_SESSION['shopping_cart'])) {

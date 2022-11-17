@@ -17,6 +17,13 @@
     margin-top: 3rem;
 }
 
+
+.i-detalles{
+    display: grid;
+    justify-items: center;
+    margin-top: 3rem;
+}
+
 .form-index{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -34,6 +41,13 @@
 .form-index3{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+    justify-content: center;
+}
+
+.form-index4{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     gap: 4rem;
     justify-content: center;
 }

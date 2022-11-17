@@ -54,8 +54,7 @@ error_reporting(-1);
             <div class="col-lg-4">
                 <form method="post" enctype="multipart/form-data">
                     <div class="card-shadow card shadow mb-4">
-                        <div class="form-index2 card-body">
-                            <h3 class="secondary">ID</h3>
+                        <div class="form-index3 card-body">
                             <h3 class="secondary">NOMBRE</h3>
                             <h3 class="secondary">TELÉFONO</h3>
                             <h3 class="secondary">DIRECCIÓN</h3>
@@ -80,8 +79,7 @@ error_reporting(-1);
                 <div class="col-lg-4">
                     <form action="checkout.php?action=add&id=<?php echo $proveedor ['id'];?>" method="post" enctype="multipart/form-data">
                         <div class="card-shadow card shadow mb-4">
-                            <div class="form-index2 card-body">
-                                <h3 class="secondary"><?php echo $proveedor['id'];?></h3>
+                            <div class="form-index3 card-body">
                                 <h3 class="secondary"><?php echo $proveedor['nombre'];?></h3>
                                 <h3 class="secondary"><?php echo $proveedor['telefono'];?></h3>
                                 <h3 class="secondary"><?php echo $proveedor['direccion'];?></h3>
@@ -118,9 +116,3 @@ error_reporting(-1);
   
 </body>
 
-    <!--
-        /*
-            Llamamos al template footer para evitar duplicar codigo
-        */
-    -->
-<?php incluirTemplate('footer'); ?>

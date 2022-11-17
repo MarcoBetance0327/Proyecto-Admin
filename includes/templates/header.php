@@ -55,6 +55,9 @@
                         <li class="nav-item venta">
                             <a href="/punto_de_venta.php" class="nav-link">Punto de Venta</a>
                         </li>
+                        <li class="nav-item venta">
+                            <a href="/detalles.php" class="nav-link">Ventas</a>
+                        </li>
                     </ul>
 
                     <?php endif; ?>

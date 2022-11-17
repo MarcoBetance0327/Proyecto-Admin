@@ -1,10 +1,3 @@
-<!--
-    @MARCO BETANCE
-    Aquí se encuentra el formulario, se le agregan los valores de la base de datos, si existe información 
-    guardada entonces los mostrara, al igual primero se sanitiza los textos introducidos para evitar inyección 
-    de código que pueda perjudicar el sistema
--->
-
 <fieldset class="form-crear">
     <label for="nombre">Nombre del Producto</label>
     <input type="text" placeholder="Nombre" id="nombre" name="producto[nombre]" class="input-info"  required value="<?php echo s($producto->nombre); ?>">

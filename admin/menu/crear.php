@@ -1,6 +1,6 @@
 <head>
     <meta charset="UTF-8">
-    <title>Ponshi Sushi</title>
+    <title>Agregar Producto</title>
     <link rel="stylesheet" href="/build/css/app.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link href="css/style.css" rel="stylesheet">
@@ -18,11 +18,6 @@ error_reporting(-1);
     use App\Producto;
     use App\Proveedor;
 
-    /* @MARCO BETANCE
-        Se crea un nuevo objeto de Comidas, y a la variable de errores se le asigna la clase de Comidas para verificar sus 
-        válidaciones
-    */    
-
     $errores = Producto::getErrores();
 
     $producto = new Producto;
@@ -36,7 +31,6 @@ error_reporting(-1);
         $errores = $producto->validar();
 
         // Revisar que el array de errores este vacio
-
         if(empty($errores)){
             $resultado = $producto->guardar();
         }
@@ -47,10 +41,6 @@ error_reporting(-1);
 
 <main class="contenedor">
     <h1 class="encabezado-crud">Agregar Producto</h1>
-
-    <!-- Se crea un formulario el cual dentro se asigna que se pueda subir cualquier tipo de archivo,
-        y dentro de esta función se agrega un formulario que almacena los elementos para que el admin pueda evitar
-        escribir todo de nuevo -->
         
     <form method="POST" action="/admin/menu/crear.php" enctype="multipart/form-data"> 
         <?php include __DIR__ . '/formulario.php' ?>
@@ -58,5 +48,3 @@ error_reporting(-1);
         <input type="submit" value="Agregar Producto" class="boton">
     </form>
 </main>
-
-<?php incluirTemplate('footer');

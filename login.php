@@ -2,11 +2,8 @@
   require 'includes/app.php';
   $db = mysqli_connect('localhost','root','root','proyecto');
   $db->set_charset('utf8');
-
   // Autenticar el usuario
-  
   $errores = [];
-
   if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $email = mysqli_real_escape_string( $db, filter_var( $_POST['email'], FILTER_VALIDATE_EMAIL));
     $password = mysqli_real_escape_string( $db, $_POST['password']);
@@ -51,58 +48,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content=""> 
     <meta name="generator" content="Hugo 0.72.0">
-    <title>Ponshi Sushi</title>
+    <title>Login</title>
     <link rel="stylesheet" href="/build/css/app.css">
     <link rel="canonical" href="https://v5.getbootstrap.com/docs/5.0/examples/sign-in/">
-
-    
-
     <!-- Bootstrap core CSS -->
-<link href="dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-
-    
-    <!-- Custom styles for this template -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="signin.css" rel="stylesheet">
   </head>
   <body class="text-center bg-login">
-
-    <a href="/"><img class="enlace-regresar" src="/build/img/atras.png"></a>
-
-    
-    
     <form class="form-signin" method="post" novalidate>
-    
-      <h1 class="h3 mb-3 font-weight-normal text-login">Iniciar Sesión</h1>
+      <h1 class=" mb-3 font-weight-normal text-login">Iniciar Sesión</h1>
       <label for="email"  class="sr-only">E-mail</label>
-      <input type="text"  id="email" name="email" class="form-control mb-2" placeholder="Email" id="email">
+      <input type="text"  id="email" name="email" class="form-control mb-2 inputs-login" placeholder="Email" id="email">
       <label for="passwrod" class="sr-only">Password</label>
-      <input type="password" name="password" id="passwrod" class="form-control" placeholder="Password" id="password" required>
-      <div class="checkbox mb-3">
-      
-      </div>
-      <button class="btn btn-lg btn-success btn-block" name="submit" type="submit">Sign in</button>
-      <p class="mt-5 mb-3 text-muted">&copy; 2021-2023</p>
-      
+      <input type="password" name="password" id="passwrod" class="form-control inputs-login" placeholder="Password" id="password" required>
+      <button class="btn btn-lg btn-success btn-block btn-login" name="submit" type="submit">Sign in</button>      
     </form>
 
-    
-    
   </body>
 </html>

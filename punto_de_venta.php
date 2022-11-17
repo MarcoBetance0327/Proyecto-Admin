@@ -116,11 +116,13 @@ if (filter_input(INPUT_GET, 'action')  == 'checkout') {
                     $query_detalles = "INSERT INTO detalles(id_venta, id_producto, cantidad, precio) Values(". $idVenta . " , " . $producto['id'] . " , " . $producto['cantidad'] . " , " . $producto['precio'] .")";
                     $result = mysqli_query($conn, $query_detalles);
                     
+                    $query_update = "UPDATE producto SET inventario = inventario - " . $producto['cantidad'] . " WHERE  id = " . $producto["id"];
+                    $result = mysqli_query($conn, $query_update);
                 endforeach;
             endif;  
             #Limpiar el carrito 
             foreach ($_SESSION['shopping_cart'] as $key => $producto) {
-                # remove the iitem
+                # remove the item
                 unset($_SESSION['shopping_cart'] [$key]);
                 
             }
@@ -166,6 +168,7 @@ if (filter_input(INPUT_GET, 'action')  == 'checkout') {
                                 if(mysqli_num_rows ($result) > 0):
                 
                                     while ($producto = $result->fetch_array()):
+                                        if($producto['inventario'] <= 0):
                     ?>
 
 
@@ -177,17 +180,35 @@ if (filter_input(INPUT_GET, 'action')  == 'checkout') {
                                     <h3 class="secondary"><?php echo $producto['nombre'];?></h3>
                                     <h3 class="secondary">$ <?php echo $producto['precio'];?></h3>
 
-                                    <input type="number" class="form-control mb-3" name="cantidad" value="1">
-                                    <input type="hidden" name="id" value="<?php echo $producto['id'];?>">
-                                    <input type="hidden" name="nombre" value="<?php echo $producto['nombre'];?>">
-                                    <input type="hidden" name="codigo" value="<?php echo $producto['codigo'];?>">
-                                    <input type="hidden" name="precio" value="<?php echo $producto['precio'];?>">
-                                    <button type="submit" name="add_to_cart" class="btn btn-warning"><i class="fa fa-shopping-cart"></i>Agregar</button>
+                                    <h4 class="seconday">Agotado</h4>
                                 </div>
                             </div>
                         </form>
                     </div>
                     <?php    
+                                        endif;
+                                        if($producto['inventario'] > 0):
+                    ?>
+                                        <div class="col-lg-4">
+                                            <form action="punto_de_venta.php?action=add&id=<?php echo $producto['id'];?>" method="post">
+                                                <div class="card-shadow card shadow mb-4">
+                                                    <div class="form-index3 card-body">
+                                                        <h3 class="secondary"><?php echo $producto['codigo'];?></h3>
+                                                        <h3 class="secondary"><?php echo $producto['nombre'];?></h3>
+                                                        <h3 class="secondary">$ <?php echo $producto['precio'];?></h3>
+
+                                                        <input type="number" class="form-control mb-3" name="cantidad" value="1">
+                                                        <input type="hidden" name="id" value="<?php echo $producto['id'];?>">
+                                                        <input type="hidden" name="nombre" value="<?php echo $producto['nombre'];?>">
+                                                        <input type="hidden" name="codigo" value="<?php echo $producto['codigo'];?>">
+                                                        <input type="hidden" name="precio" value="<?php echo $producto['precio'];?>">
+                                                        <button type="submit" name="add_to_cart" class="btn btn-warning"><i class="fa fa-shopping-cart"></i>Agregar</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                    <?php
+                                        endif;
                                     endwhile;
                                 endif;
                             endif;
@@ -286,4 +307,3 @@ if (filter_input(INPUT_GET, 'action')  == 'checkout') {
   
 </body>
 
-<?php incluirTemplate('footer'); ?>
