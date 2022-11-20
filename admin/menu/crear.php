@@ -45,6 +45,6 @@ error_reporting(-1);
     <form method="POST" action="/admin/menu/crear.php" enctype="multipart/form-data"> 
         <?php include __DIR__ . '/formulario.php' ?>
 
-        <input type="submit" value="Agregar Producto" class="boton">
+        <input type="submit" value="Agregar Producto" class="boton buton-edicion">
     </form>
 </main>

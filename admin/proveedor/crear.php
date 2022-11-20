@@ -50,6 +50,6 @@
     <form method="POST" action="/admin/proveedor/crear.php" enctype="multipart/form-data"> 
         <?php include __DIR__ . '/formulario.php' ?>
 
-        <input type="submit" value="Agregar Proveedor" class="boton">
+        <input type="submit" value="Agregar Proveedor" class="boton buton-edicion">
     </form>
 </main>

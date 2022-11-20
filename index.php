@@ -12,17 +12,6 @@ error_reporting(-1);
 
     $auth = $_SESSION['login'] ?? null;
 
-    if($_SERVER['REQUEST_METHOD'] === 'POST'){
-
-        // Validar id
-        $id = $_POST['id'];
-        $id = filter_var($id, FILTER_VALIDATE_INT);
-
-        if($id){
-            $producto = Producto::find($id);
-            $producto->eliminar();
-        }
-    }
 
     if(!isset($inicio)){
         $inicio = false;
@@ -44,16 +33,26 @@ error_reporting(-1);
     $conteo = $pan[0];
     $paginas = ceil($conteo / $productosPorPagina);
 
-    $query = "SELECT p.nombre, pv.nombre as pv_nombre, p.inventario, p.codigo, p.precio FROM producto p inner join proveedor pv on p.id_proveedor = pv.id LIMIT " . $limit . " OFFSET " . $offset;
+    $query = "SELECT p.id, p.nombre, pv.nombre as pv_nombre, p.inventario, p.codigo, p.precio FROM producto p inner join proveedor pv on p.id_proveedor = pv.id LIMIT " . $limit . " OFFSET " . $offset;
     $result = mysqli_query($conn, $query);
 
-    
+    if($_SERVER['REQUEST_METHOD'] === 'POST'){
+
+        // Validar id
+        $id = $_POST['id'];
+        $id = filter_var($id, FILTER_VALIDATE_INT);
+
+        if($id){
+            $producto = Producto::find($id);
+            $producto->eliminar();
+        }
+    }
 
     incluirTemplate('header');
 ?>
 
 <body class="main-index">
-    <div class="collapse navbar-collapse nav-header2" id="collapse">
+    <div class="collapse navbar-collapse nav-header2 btn-agregarP" id="collapse">
         <?php if($auth): ?>
             <div class="card-header  items-header div_edicion">                
                 <a href="admin/menu/crear.php" class="enlace-crear">Agregar Producto</a>
@@ -88,7 +87,7 @@ error_reporting(-1);
                 ?>
 
 
-                <div class="col-lg-4">
+                <div class="col-lg-4 contenedor-listado">
                     <form action="checkout.php?action=add&id=<?php echo $producto ['id'];?>" method="post" enctype="multipart/form-data">
                         <div class="card-shadow card shadow mb-4">
                             <div class="form-index4 card-body">
@@ -108,7 +107,7 @@ error_reporting(-1);
                             <form method="POST"class="enlace-eliminar">
                                 <input type="hidden" name="id" value="<?php echo $producto['id'] ?>">
                                 <input type="hidden" name="tipo" value="noticia">
-                                <button type="submit" class="btn btn-warning">Eliminar Producto</button>
+                                <button type="submit" class="btn btn-warning enlace-actualizar">Eliminar Producto</button>
                             </form>
                         </div>
                     <?php endif; ?>

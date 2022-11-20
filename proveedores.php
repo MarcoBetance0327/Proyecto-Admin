@@ -35,7 +35,7 @@ error_reporting(-1);
 
     <div class="index">
         <div>
-            <div class="collapse navbar-collapse nav-header2" id="collapse">
+            <div class="collapse navbar-collapse nav-header2 btn-agregarP" id="collapse">
                 <?php if($auth): ?>
                     <div class="card-header  items-header div_edicion">
                         <!-- Se evaluara si la sesión del usuario es el admin, si es el admin, entonces se le otorgara el permiso de agregar un producto, 
@@ -76,7 +76,7 @@ error_reporting(-1);
                 ?>
 
 
-                <div class="col-lg-4">
+                <div class="col-lg-4 contenedor-listado">
                     <form action="checkout.php?action=add&id=<?php echo $proveedor ['id'];?>" method="post" enctype="multipart/form-data">
                         <div class="card-shadow card shadow mb-4">
                             <div class="form-index3 card-body">
@@ -99,7 +99,7 @@ error_reporting(-1);
                             <form method="POST"class="enlace-eliminar">
                                 <input type="hidden" name="id" value="<?php echo $proveedor['id'] ?>">
                                 <input type="hidden" name="tipo" value="noticia">
-                                <button type="submit" class="btn btn-warning">Eliminar Proveedor</button>
+                                <button type="submit" class="btn btn-warning enlace-actualizar">Eliminar Proveedor</button>
                             </form>
                         </div>
                     <?php endif; ?>

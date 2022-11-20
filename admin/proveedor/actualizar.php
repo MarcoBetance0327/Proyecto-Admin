@@ -74,7 +74,7 @@ error_reporting(-1);
     <form method="POST" enctype="multipart/form-data">
         <?php include __DIR__ . '/formulario.php'; ?>
 
-        <input type="submit" value="Actualizar Proovedor" class="boton">
+        <input type="submit" value="Actualizar Proovedor" class="boton buton-edicion">
     </form>
     
 </main>

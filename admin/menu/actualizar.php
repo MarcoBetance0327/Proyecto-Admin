@@ -34,7 +34,7 @@ error_reporting(-1);
     $id = filter_var($id, FILTER_VALIDATE_INT);
 
     if(!$id){
-        header('Location: /admin');
+        header('Location: /');
     }
 
     // Obtener los datos de la propiedad 
@@ -77,7 +77,7 @@ error_reporting(-1);
     <form method="POST" enctype="multipart/form-data">
         <?php include __DIR__ . '/formulario.php'; ?>
 
-        <input type="submit" value="Actualizar Producto" class="boton">
+        <input type="submit" value="Actualizar Producto" class="boton buton-edicion">
     </form>
     
 </main>

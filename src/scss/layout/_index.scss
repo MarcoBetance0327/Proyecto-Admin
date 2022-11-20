@@ -14,7 +14,10 @@
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     justify-items: center;
-    margin-top: 3rem;
+}
+
+.btn-agregarP{
+    margin: 3rem 0;
 }
 
 
@@ -68,4 +71,10 @@
     @include media(t1){
         font-size: 6.5vw;
     }
+}
+
+.contenedor-listado{
+    display: flex;
+    flex-direction: row;
+
 }

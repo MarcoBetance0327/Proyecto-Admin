@@ -86,11 +86,8 @@ Estilos del enlace para actualizar las comidas
 .enlace-actualizar{
     position: relative;
 
-    img{
-        width: 2.5rem;
-        height: 2.5rem;
-        object-fit: cover;
-    }
+    width: 14rem;
+    height: 3rem;
 }
 
 /*
@@ -119,6 +116,8 @@ Estilos de la sección para editar la comidas
     display: flex;
     flex-direction: row;
     position: relative;
+    gap: 1rem;
+    margin: 0 0 1rem 2rem;
 }
 
 /*
